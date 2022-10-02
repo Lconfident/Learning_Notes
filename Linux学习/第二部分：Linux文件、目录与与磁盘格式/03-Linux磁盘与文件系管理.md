@@ -276,7 +276,6 @@ Group 1: (Blocks 32768-65535)
 
 ![目录占用的 block 记录的数据示意图](http://cn.linux.vbird.org/linux_basic/0230filesystem_files/dir_block.jpg "目录占用的 block 记录的数据示意图")  
 
-
 如果想要实际观察 root 家目录内的文件所占用的 inode 号码时，可以使用 ls -i 这个选项来处理：
 
 ```shell
