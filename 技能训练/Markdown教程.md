@@ -1,5 +1,3 @@
-[toc]
-
 ## 前言
 
 接触了Github之前，我就已经接触到markdown，但用的不是很多，但之后意外结识了Typora这个编辑器。
@@ -38,13 +36,15 @@
 
 > > 两个`>>`
 
-支持无线套娃
+支持无限套娃
 
 ### 分割线
 
 语法格式：三个以上的`-`或者`*`都可以，例如`----`
 
 ### 图片
+
+![这是图片备注](https://scpic.chinaz.net/files/pic/pic9/201311/apic2098.jpg)
 
 语法格式：`![alt](图片地址 "title")`
 
@@ -53,7 +53,7 @@
 如果想要调整图片的大小，有两种方式：
 
 1. 右击图片，选择缩放图片后，语法格式变成`<img src="Typora/fitst.jpg" alt="first" style="zoom:20%;"/>`,`20%`可自行调整
-1. 通过HTML调节，
+2. 通过HTML调节，
 
 ```html
 <center>
@@ -64,7 +64,7 @@
 </center>
 ```
 
--  `<center>`标签设置图片居中
+- `<center>`标签设置图片居中
 - `<boder-radius>`设置圆角
 - `src`设置图片路径
 - `alt`放置图片链接失效后的显示文字
@@ -77,15 +77,15 @@
 ### 列表
 
 - 无序列表
-
+  
   语法格式：`-`、`+`、`*`任何一种加空格都可以，如`- 无序列表`
 
 - 有序列表
-
+  
   语法格式：`数字+点+空格+内容`，如`1. 有序列表`
 
 - 子列表
-
+  
   在子列表前按下<kbd>Tab</kbd>键即可构成子列表
 
 ### 表格
@@ -102,70 +102,70 @@
 
 ### 代码
 
-- 行内代码：\`中间是代码\`，单个反引号
+行内代码：\`中间是代码\`，单个反引号
 
-- 多行代码：
+1. 多行代码：
 
-  \`\`\`
+\`\`\`
 
-  代码
+代码
 
-  \`\`\`
+\`\`\`
 
-  三个反引号，且两边的反引号各占一行
+三个反引号，且两边的反引号各占一行
 
 ### 高级技巧
 
 1. 转义
-
+   
    Markdown用反斜杠转移特殊字符
-
+   
    ```
-   \	反斜线
-   `	反引号
-   *	星号
-   _	下划线
-   []	方括号
-   {}	花括号
-   #	＃字号
-   +	加号
-   -	减号
-   .	英文句点
-   !	感叹号
+   \    反斜线
+   `    反引号
+   *    星号
+   _    下划线
+   []    方括号
+   {}    花括号
+   #    ＃字号
+   +    加号
+   -    减号
+   .    英文句点
+   !    感叹号
    ```
 
-2. 公式
-
+2. 公式（一般用LaTex来写）
+   
    - 行内公式：用`$...$`括起来
-
+   
    - 块间公式：
-
+     
      ```
      $$$
-     	块间公式
+         块间公式
      $$$
      ```
 
 ### Typora快捷键
 
-|        内容         | 一般语法                 | 快捷键操作                                    |
-| :-----------------: | :----------------------- | :-------------------------------------------- |
-|      一级标题       | `#`                      | <kbd>Ctrl</kbd>+<kbd>1</kbd>                  |
-|      二级标题       | `##`                     | <kbd>Ctrl</kbd>+<kbd>2</kbd>                  |
-|        加粗         | `**加粗**`               | <kbd>Ctrl</kbd>+<kbd>B</kbd>                  |
-|        斜体         | `*斜体*`                 | <kbd>Ctrl</kbd>+<kbd>I</kbd>                  |
-|       下划线        | `<u>下划线</u>`          | <kbd>Ctrl</kbd>+<kbd>U</kbd>                  |
-|       删除线        | `~~删除线~~`             | <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>5</kbd>  |
-|      创建表格       |                          | <kbd>Ctrl</kbd>+<kbd>T</kbd>                  |
-|     创建超链接      | `[超链接名](超链接地址)` | <kbd>Ctrl</kbd>+<kbd>K</kbd>                  |
-|      插入图片       | `![alt](图片地址)`       | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd> |
-|     插入公式块      | `$$公式$$`               | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> |
-|      添加引用       | `> 引用`                 | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Q</kbd> |
-|   返回Typora顶部    |                          | <kbd>Ctrl</kbd>+<kbd>Home</kbd>               |
-|   返回typora底部    |                          | <kbd>Ctrl</kbd>+<kbd>End</kbd>                |
-| 启动/退出源代码模式 |                          | <kbd>Ctrl</kbd>+<kbd>/</kbd>                  |
-|        搜索         |                          | <kbd>Ctrl</kbd>+<kbd>F</kbd>                  |
-|     搜索并替换      |                          | <kbd>Ctrl</kbd>+<kbd>H</kbd>                  |
-|    生成文档目录     |                          | 输入`[toc]`，再按<kbd>Enter</kbd>             |
+| 内容         | 一般语法            | 快捷键操作                                         |
+|:----------:|:--------------- |:--------------------------------------------- |
+| 一级标题       | `#`             | <kbd>Ctrl</kbd>+<kbd>1</kbd>                  |
+| 二级标题       | `##`            | <kbd>Ctrl</kbd>+<kbd>2</kbd>                  |
+| 加粗         | `**加粗**`        | <kbd>Ctrl</kbd>+<kbd>B</kbd>                  |
+| 斜体         | `*斜体*`          | <kbd>Ctrl</kbd>+<kbd>I</kbd>                  |
+| 下划线        | `<u>下划线</u>`    | <kbd>Ctrl</kbd>+<kbd>U</kbd>                  |
+| 删除线        | `~~删除线~~`       | <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>5</kbd>  |
+| 创建表格       |                 | <kbd>Ctrl</kbd>+<kbd>T</kbd>                  |
+| 创建超链接      | `[超链接名](超链接地址)` | <kbd>Ctrl</kbd>+<kbd>K</kbd>                  |
+| 插入图片       | `![alt](图片地址)`  | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd> |
+| 插入公式块      | `$$公式$$`        | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> |
+| 添加引用       | `> 引用`          | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Q</kbd> |
+| 返回Typora顶部 |                 | <kbd>Ctrl</kbd>+<kbd>Home</kbd>               |
+| 返回typora底部 |                 | <kbd>Ctrl</kbd>+<kbd>End</kbd>                |
+| 启动/退出源代码模式 |                 | <kbd>Ctrl</kbd>+<kbd>/</kbd>                  |
+| 搜索         |                 | <kbd>Ctrl</kbd>+<kbd>F</kbd>                  |
+| 搜索并替换      |                 | <kbd>Ctrl</kbd>+<kbd>H</kbd>                  |
+| 生成文档目录     |                 | 输入`[toc]`，再按<kbd>Enter</kbd>                  |
 
 > TOC从文档中提取所有标题，其内容将自动更新
