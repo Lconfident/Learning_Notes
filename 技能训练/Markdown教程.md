@@ -169,3 +169,35 @@
 | 生成文档目录     |                 | 输入`[toc]`，再按<kbd>Enter</kbd>                  |
 
 > TOC从文档中提取所有标题，其内容将自动更新
+
+序号	类型	快捷键
+1	新建	Ctrl+N
+2	新建窗口	Ctrl+Shift+N
+3	打开	Ctrl+O
+4	快速打开	Ctrl+P
+5	保存	Ctrl+S
+6	另存为	Ctrl+Shift+S
+7	关闭	Ctrl+W
+8	撤销	Ctrl+Z
+9	重做	Ctrl+Y
+10	复制为MarkDown	Ctrl+Shift+C
+11	粘贴为纯文本	Ctrl+Shift+V
+12	选中当前行/句	Ctrl+L
+13	选中当前格式文本	Ctrl+E
+14	选中当前词	Ctrl+D
+15	跳转到文首	Ctrl+Home
+16	跳转到文末	Ctrl+End
+17	查找	Ctrl+F
+18	替换	Ctrl+H
+19	大纲视图	Ctrl+Shift+1
+20	文档列表视图	Ctrl+Shift+2
+21	文件树视图	Ctrl+Shift+3
+22	显示隐藏侧边栏	Ctrl+Shift+L
+23	源代码模式	Ctrl+/
+24	专注模式	F8
+25	打字机模式	F9
+26	切换全屏	F11
+27	实际大小	Ctrl+Shift+0
+28	放大/缩小	Ctrl + Shift+ +/-
+29	应用内窗口切换	Ctrl+Tab
+31	打开DevTools	Shift+F12
