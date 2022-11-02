@@ -112,6 +112,80 @@ JRE就是运行Java字节码的虚拟机。
 
 通常来说，RI只是一个“能跑”的正确的代码，它不追求速度，只是一个规范。所以，如果真正要选择一个Java的消息服务器，一般是没人用RI的，大家都会选择一个有竞争力的商用或开源产品
 
+### 拆箱装箱
+
+所有基本类型都有对应的**类**类型,这种类就是封装类
+
+**数字封装类**有
+
+Byte,Short,Integer,Long,Float,Double
+
+这些类都是抽象类Number的子类
+
+![img](https://stepimagewm.how2j.cn/672.png)
+
+```java
+public class Test{
+    public static void main (String[] args){
+        int i = 5;
+        //把一个基本类型的变量，转换为一个Integer对象
+        Integer it = new Integer(i);
+
+        //把一个对象，转换为一个基本类型
+        int i2 = it.intValue(); 
+    }
+} 
+
+```
+
+```java
+public class TestNumber {
+
+	public static void main(String[] args) {
+		int i = 5;
+		
+		Integer it = new Integer(i);
+		//Integer是Number的子类，所以打印true
+		System.out.println(it instanceof Number);
+	}
+}
+```
+- 自动装箱：不需要调用构造方法，通过=符号自动把 基本类型 转换为 类类型 就叫装箱
+- 自动拆箱：不需要调用Integer的intValue方法，通过=就自动转换成int类型，就叫拆箱
+
+```java
+public class TestNumber {
+
+	public static void main(String[] args) {
+		int i = 5;
+
+		//基本类型转换成封装类型
+		Integer it = new Integer(i);
+		
+		//自动转换就叫装箱
+		Integer it2 = i;
+		
+	}
+}
+```
+```java
+public class TestNumber {
+ 
+    public static void main(String[] args) {
+        int i = 5;
+ 
+        Integer it = new Integer(i);
+         
+        //封装类型转换成基本类型
+        int i2 = it.intValue();
+        
+        //自动转换就叫拆箱
+        int i3 = it;
+         
+    }
+}
+```
+
 ### 数字转字符串
 - 方法一：使用String类的静态方法valueOf
 - 方法二：先把基本类型装箱为对象，然后调用对象的toString
@@ -144,3 +218,4 @@ public class TestNumber{
 }
 
 ```
+
