@@ -1,6 +1,4 @@
-[toc]
-
-
+[TOC]
 
 ### 初识 Java
 
@@ -49,19 +47,20 @@ Java语言编写的程序既是 <u>编译型</u> ，又是 <u>解释型</u> 的
 比如上面的HelloWorld.java修改如下：
 
 　 　`package org.javaresearch;`
+
 ```java
       public class HelloWorld
-    
+
         {
-    
+
           public static void main(String[] args)
-    
+
           {
-    
+
                System.out.println("Hello World!");
-    
+
           }
-    
+
        }
 ```
 
@@ -3470,9 +3469,9 @@ doit2 Constants_B
 >                //遍历数组
 >                System.out.println(c + "与" + arrays[i] + "的比较结果：" + c.compareTo(arrays [i]));
 >            }
->                   
+>    
 >        }
->                   
+>    
 >        public static void main(String[] args) {
 >            Compare(Constants.valueOf("Constants_B"));
 >        }
