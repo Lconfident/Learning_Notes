@@ -1,4 +1,5 @@
 ## Java简介
+
 ### 为什么Java应用最广泛？
 
 从互联网到企业平台，Java是应用最广泛的编程语言，原因在于：
@@ -119,21 +120,22 @@ JRE就是运行Java字节码的虚拟机。
 ## 数据类型
 
 ### 基本类型
+
 Java 语言提供了八种基本类型，用户无需定义也可以直接使用。其数据保存在相应的方法栈中。
 
-|基本数据类型|	字节数|	默认值	|包装数据类型	|备注|
-|----|----|----|----|----|
-|byte	|1|	0|	Byte|	|
-|short	|2	|0|	Short|	|
-|int	|4	|0|	Integer||	
-|long	|8	|0|	Long	||
-|float	|4	|0.0f|	Float|	数字后加f|
-|double	|8	|0.0|	Double|	|
-|char	|2	|null|	Character|	必须用单引号|
-|boolean|	|1|	false	|Boolean|	
+| 基本数据类型  | 字节数 | 默认值  | 包装数据类型    | 备注      |
+| ------- | --- | ---- | --------- | ------- |
+| byte    | 1   | 0    | Byte      |         |
+| short   | 2   | 0    | Short     |         |
+| int     | 4   | 0    | Integer   |         |
+| long    | 8   | 0    | Long      |         |
+| float   | 4   | 0.0f | Float     | 数字后加f   |
+| double  | 8   | 0.0  | Double    |         |
+| char    | 2   | null | Character | 必须用单引号  |
+| boolean |     | 1    | false     | Boolean |
 
 - 布尔型
-boolean 类型只含有两个值：true 和 false。字节存储为 11111111 和 00000000 。
+  boolean 类型只含有两个值：true 和 false。字节存储为 11111111 和 00000000 。
 
 ```java
 boolean b = true;      
@@ -141,7 +143,7 @@ boolean b = false;
 ```
 
 - 字符型
-char 类型使用单引号来表示字符。因为 Java 统一采用 unicode 编码，2 字节可以表示一字符。char 类型同样可以用十六进制码保存汉字等特殊字符：'\u0000' - '\uffff'。
+  char 类型使用单引号来表示字符。因为 Java 统一采用 unicode 编码，2 字节可以表示一字符。char 类型同样可以用十六进制码保存汉字等特殊字符：'\u0000' - '\uffff'。
 
 ```java
 char ch = 'a';      
@@ -150,18 +152,16 @@ char ch = '/u3089';
 ```
 
 - 整型和浮点型
-Java 没有无符号类型，所有数据都有符号。
-
+  Java 没有无符号类型，所有数据都有符号。
 1. 整型(byte/short/int/long) 用来表示整型数据。
 
 2. 浮点型(float/double) 用来表示浮点数据，实际以指数形式存储，所以和实际值之间有偏差。
-
 - 为 float 类型赋值必须在数字后加 f，否则数字默认被识别为 double 类型，会导致赋值出错。
 
 - 数字基本类型都包含最大最小值常量，如 Integer.MAX_VALUE 和 Integer.MIN_VALUE .
 
 - 在浮点型有三个特殊数值表示溢出和出错：
-
+  
   - POSITIVE_INFINITY ：正无穷大，正数除以 0 可以得到。
   - NEGATIVE_INFINITY ：负无穷大，负数除以 0 可以得到。
   - NaN ：非数，零除以 0 可以得到。（两个 NAN 值也不相等）
@@ -174,6 +174,7 @@ double d = POSITIVE_INFINITY;
 ```
 
 ### 包装类型
+
 均继承自 Number 抽象类，把基本类型数据封装成对象。基本类型和包装类型之间会自动进行转化。
 
 - 基本类型（如int），是一个值。允许不赋初值，系统自动添加默认值。
@@ -258,7 +259,9 @@ public class TestNumber {
 ```
 
 ### 数组
+
 #### Array 类
+
 数据的集合。本质是一个对象，数据存储在堆区，由引用指向数组首个元素的地址。
 
 创建数组
@@ -277,17 +280,18 @@ int len = arr.length;                      // 返回数组长度
 ```
 
 #### Arrays 类
+
 对数组进行操作的辅助类，实现了对数组的常用操作。
 
 - 数组排序
-sort 方法：可以对数组排序，默认数组数值从小到大排列，用户可以自定义排列顺序，
+  sort 方法：可以对数组排序，默认数组数值从小到大排列，用户可以自定义排列顺序，
 
 ```java
 Arrays.sort(arr);                                     // 数组排序
 ```
 
 - 数组复制
-copyOf/copyOfRange 方法：复制数组。底层调用 System.arrayCopy 的本地方法实现，常用于数组扩容。
+  copyOf/copyOfRange 方法：复制数组。底层调用 System.arrayCopy 的本地方法实现，常用于数组扩容。
 
 ```java
 int[] arr1 = Arrays.copyOf(arr, 10);                  // 复制数组：前 10 个单位
@@ -295,7 +299,7 @@ int[] arr2 = Arrays.copyOf(arr, 0, arr.length);       // 复制数组：从 0 �
 ```
 
 - 数组转化
-asList 方法：将数组转化为列表（List 类），但数组数据必须是包装类型。
+  asList 方法：将数组转化为列表（List 类），但数组数据必须是包装类型。
 
 调用该方法将数组转换为列表后，在内存中实际还是以数组形式存储。这可能会导致以下两个问题：
 
@@ -310,10 +314,13 @@ List list = new ArrayList<>(Arrays.asList(arr));      // 将数组转换为集�
 ```
 
 ### 字符串
+
 #### String类
+
 保存字符串。String 类本质是一个 final 对象，由引用指向存储字符串对象的地址。引用虽然可变，但内存数据不能被更改。
 
 ##### 创建字符串
+
 String 对象创建后一经赋值不再改变，有以下两种创建方式：
 
 1. 直接赋值：如果常量池没有，则在常量池新建对象。否则直接使用常量池中已有对象，**引用指向常量池**。
@@ -372,11 +379,13 @@ int n2 = Integer.valueOf(str);
 ```
 
 #### StringBuilder / StringBuffer 类
+
 由于 String 类不可变性，对其频繁更改往往会产生较多临时变量类，占用大量内存。对此我们通常使用 StringBuilder/StringBuffer 来避免，这两个类**允许在原有内存地址**对字符串进行操作。
 
 其中 `StringBuilder` 类性能更好，`StringBuffer` 类线程安全。
 
 ##### 创建字符串
+
 必须通过构造方法创建，不可以直接赋值的形式创建:
 
 ```java
@@ -392,6 +401,7 @@ String str2 = str.toString();
 ```
 
 ##### 专用方法
+
 `StringBuilder` / `StringBuffer` 类可以使用 `String` 类的全部方法，还新增了以下方法直接对字符串进行修改。
 
 ```java
@@ -403,12 +413,15 @@ str.reverse(str2);                 // 翻转字符串
 ```
 
 ### 大数
+
 在 Java 程序中，我们可能会用到一些数值特别巨大、或者小数特别精确的数值，这些数值无法用基础类型表示。因此我们定义了 `BigInteger`/`BigDecimal` 类来保存这类数据，实际是以字符串形式在堆区存储。
 
 #### BigInteger 类
+
 主要用来操作比 long 类型更大的整型数字。
 
 #### BigDecimal 类
+
 基于 `BigInteger` 类实现。由于基本浮点数类型(float/double) 会产生**精度丢失问题**，因此常使用 `BigDecimal` 类代替。涉及金额必须使用该类。
 
 ```java
@@ -442,6 +455,7 @@ BigDecimal x = y.setScale(3, rules);      // 设置精度和保留规则
 ### 枚举
 
 #### Enum 类
+
 （JDK 1.5 新增）比 Class 类多了部分特殊约束的特殊类型，能更加简洁地定义常量。
 
 使代码更具可读性，允许进行编译时检查，预先记录可接受值的列表，并避免由于传入无效值而引起的意外行为。
@@ -504,9 +518,10 @@ public enum StatusCodeEnum{
 
 `System.out.println(StatusCodeEnum.SUCCESS.getCode());`
 
-
 ### 时间
+
 #### 数字类型
+
 在日常 Java 开发中，我们最常使用 Long 类型，而不是 Date/Timestamp 类型表示时间。
 
 我们可以通过 System.currentTimeMillis 方法获取当前系统时间，默认为 13 位的数字（精确到 ms）。
@@ -517,12 +532,15 @@ Long timestamp2 = (System.currentTimeMillis()) / 1000;        // 10 位 精确�
 ```
 
 ### 泛型
+
 #### 泛型定义
+
 定义类时并不固定数据类型，等到创建对象或调用方法时再明确数据类型。
 
 **编译**过程中，由编译器检查类型安全，自动隐性地对类的数据类型进行强制转换（Object -> 指定数据类型）。编译后生成的 字节码文件(.class) 将不再含有泛型。
 
 #### 泛型使用
+
 可使用 A-Z 之间的任何一个字母，常用：
 
 - T (type)： 表示具体的一个 java 类型
@@ -553,18 +571,21 @@ class Test{
 ```
 
 ## 面向对象
+
 ### 什么是面向对象？
+
 - 面向过程：根据解决问题的过程，直接设计系统。如 C 语言。
 
 - 面向对象：将问题分解成多个对象，设计模块化、低耦合的系统。如 java 语言。
-
-  -  特性：封装、继承、多态。
-
+  
+  - 特性：封装、继承、多态。
+  
   - 优点：使系统更加灵活，易维护、易复用、易扩展。
 
 ### 封装
 
 #### 普通内部类
+
 定义在**类**中的类，可以使用外部类所有属性和方法。
 
 普通内部类属于具体对象，因此不能声明 static 成员变量和方法。
@@ -597,6 +618,7 @@ public class Test {
 ```
 
 #### 局部内部类
+
 定义在一个**方法**或者一个**作用域**里的内部类。
 
 对局部内部类的访问仅限于方法内或者该作用域内，且局部内部类不能被访问权限所修饰。
@@ -623,6 +645,7 @@ class Factory {
 ```
 
 #### 匿名内部类
+
 匿名内部类不用定义名称，但必须继承一个父类或实现一个接口。
 
 由于没有类名，匿名内部类不能定义构造器。
@@ -684,6 +707,7 @@ public class Test {
 ```
 
 #### 静态内部类
+
 静态内部类是不需要依赖于外部类，可以在不创建外部类对象的情况下创建内部类的对象。静态内部类不能使用外部类的非 static 成员变量或者方法。
 
 ```java
@@ -702,6 +726,7 @@ class Outter {
 ```
 
 ### 继承
+
 #### 类的继承
 
 子类继承父类后，无需定义也可使用父类定义好的`public/protected` **方法和属性**。也可以进行扩展和方法的重写。
@@ -711,7 +736,6 @@ class Outter {
 - 父类的 static 方法不会被子类继承，子类的 static 方法会隐藏父类的同名 static 方法。
 
 - 父类的构造方法不会被子类继承，子类必须在构造方法首行调用父类构造方法（先构造父类，再构造子类）
-
 
 ```java
 final public class Trunk extends Car{ 
@@ -742,6 +766,7 @@ final public class Trunk extends Car{
 Object 类是一切 java 类的父类。对于普通的 java 类,即便不声明也默认继承了 Object 类。
 
 #### 接口继承
+
 和类的继承类似。但 Java **类只能单继承**，而 Java **接口可以多继承**。
 
 ```java
@@ -751,7 +776,9 @@ interface Charge extends Move, Fight{
 ```
 
 ### 多态
+
 #### 继承多态
+
 - 重载(overload)：定义多种同名方法，调用时根据传入参数判定调用哪种方法。
 - 重写(override)：子类定义完全相同的方法覆盖父类。
 
@@ -770,16 +797,17 @@ interface Charge extends Move, Fight{
 > 改变的是newCar的类型，而不是mycar
 
 #### 方法多态
-- 调用普通方法
 
+- 调用普通方法
+  
   子类同名方法会覆盖父类。执行方法根据实际对象类型来判定，即执行子类重写的方法。
 
 - 调用 `static / private / final` 以及`构造方法`
-
+  
     特殊方法不能被覆盖，不存在多态。执行方法会根据引用类型来判定，即执行父类方法。
 
 - 调用成员变量
-
+  
     父类属性值不会被子类继承，不存在多态。调用变量会根据引用类型来判定，即得到父类属性值。
 
 ```java
@@ -794,6 +822,7 @@ System.out.print(newCar.description);  // (trunk) this is a trunk
 ```
 
 #### 反射机制
+
 JAVA 是动态编译语言（运行时才确定类型），支持反射机制。在运行状态中
 
 - 对于任意一个类，都能够知道这个类的所有属性和方法；
@@ -806,6 +835,7 @@ JAVA 是动态编译语言（运行时才确定类型），支持反射机制。
 尽管在应用层面很少使用反射机制，但在设计基础框架的时候反射机制非常有用。
 
 ##### 反射机制运用
+
 所谓的反射机制就是java语言在运行时拥有一项自观的能力。
 
 > 使用反射的背景
@@ -817,7 +847,6 @@ JAVA 是动态编译语言（运行时才确定类型），支持反射机制。
 - Constructor 类：类的构造方法
 - Field 类：类的属性
 - Method 类：类的方法
-
 
 ```java
 public class Reflection {
@@ -887,7 +916,9 @@ public class Demo {
 ```
 
 ## 类和接口
+
 ### 对象Object
+
 java 是面向对象的语言：对象包含了状态和行为，用户通过调用对象的方法、改变对象的属性来实现 java 程序的功能。
 
 ```java
@@ -901,6 +932,7 @@ me.go("London");                                     // 调用对象方法
 java 文件可以含有多个类 / 接口，但只能有一个 public 类 / 接口供**外部访问。**
 
 ### 类 Class
+
 对象的类型：定义对象含有的变量和方法。
 
 ```java
@@ -957,6 +989,7 @@ public class Car {
 - 未定义任何构造方法时，系统会自动添加无参构造方法。
 
 #### 终态声明
+
 - final 常量： 只能赋值一次，不可更改。
 - final 类： 不可被继承。
 - final 方法：（弃用）不可被继承。现在所有的 private 方法都隐式地指定为 final。
@@ -964,18 +997,21 @@ public class Car {
 对于 final 常量，如果编译时就可以确定值，编译器会在编译时直接把这个变量替换成它的值。
 
 #### 静态声明
+
 - static 变量：该变量由该类的所有对象共享，不需要创建对象也可使用。
 - static 方法：允许直接访问，不需要创建对象也可被调用。如 main 方法。
 - static 初始化块：在创建类的第一个对象前自动执行（先执行静态初始化块，再执行初始化块）。
 - static 内部类：外部类对象共享，只能访问外部类的静态成员。
 
 #### 权限声明
+
 - public： 允许所有访问。
 - protected： 只允许本类、同包和子类访问。
 - [default]： 允许本类和同包访问。
 - private： 只允许本类访问。
 
 ### 接口 Interface
+
 类的规范：只规定应含有哪些方法，而不负责具体实现。
 
 ```java
@@ -1016,14 +1052,15 @@ public abstract class Vehicle {
 - 一个实体类可以实现多个接口，但只能继承一个抽象类。
 
 #### 更新声明
+
 - default 方法：更新接口时添加的新方法，允许旧类实现接口而不实现该方法。
-
-    - 可以直接在接口内实现，供没有定义的旧类直接使用。若类中实现了该方法则覆盖。
-
-    - 如果类实现了多个接口且拥有同名 default 方法：
-
-        1. 两个接口若存在继承关系，调用时优先使用子类方法。
-        2. 否则，必须重写子类 default 方法，通过 super 关键字明确实现哪个接口：
+  
+  - 可以直接在接口内实现，供没有定义的旧类直接使用。若类中实现了该方法则覆盖。
+  
+  - 如果类实现了多个接口且拥有同名 default 方法：
+    
+    1. 两个接口若存在继承关系，调用时优先使用子类方法。
+    2. 否则，必须重写子类 default 方法，通过 super 关键字明确实现哪个接口：
 
 ```java
 class Plane implements Move, Fly{
@@ -1035,11 +1072,13 @@ class Plane implements Move, Fly{
 ```
 
 ### 包 Package
+
 命名空间，表示 java 文件的存储路径。其路径记录在每个 java 文件首。
 
 `package com.company.project.module;                    // 声明存储路径`
 
 #### 导入 import
+
 在 java 文件中，如果要调用其他 java 文件中定义的类 / 接口，就需要进行导入：
 
 - 同一存储路径（包）下的 java 文件不需要导入，可以直接调用。
@@ -1066,7 +1105,9 @@ public class Test{
 ```
 
 ## 方法调用
+
 ### 参数传递
+
 值传递：在 Java 方法中传递参数，形参本质是实参的副本。
 
 1. 参数是基础数据类型：对形参的改变不会影响实参。
@@ -1091,10 +1132,13 @@ public class Test{
     }
 }
 ```
+
 ### Lambda 表达式
+
 JDK 1.8 新增。
 
 ## 数值比较和排序的常用方法
+
 ### 等值判断
 
 Object 类实现了 equals 方法 ，用于比较两个数据元素是否相等。
@@ -1116,10 +1160,9 @@ System.out.println(a.equals(b));         // false
 - 对于基本类型，两者等价：判断数据是否相等。
 
 - 对于对象（如 String 类）：
-
-    - ==：比较两个元素内存地址是否相等，即是否是同一个元素。
-    - equals 方法：比较两个元素内容是否一致。
-
+  
+  - ==：比较两个元素内存地址是否相等，即是否是同一个元素。
+  - equals 方法：比较两个元素内容是否一致。
 
 ```java
 System.out.println(s1 == s2);                 // 判断两个引用指向的内存地址是否相等  
@@ -1177,6 +1220,7 @@ Comparator 接口和 Comparable 接口都用于比较两个元素的大小：
 > Comparator 接口的 equals 方法和 Object 类的 equals 方法不同， Object 类的 equals 方法实现在实体类的内部。
 
 #### compareTo 方法
+
 Java 自带数据类型均已实现 Comparable 接口并重写 compareTo 方法，默认情况下
 
 - 如果 s1 等于 s2，则返回 0；
@@ -1190,6 +1234,7 @@ System.out.println(s1.compareTo(s2));
 ```
 
 #### compare 方法
+
 Arrays/Collections 类定义了 sort 方法对数组或者集合元素进行排列，数值的比较通过调用 Comparator 接口的 compare 方法实现。
 
 执行 sort 方法时如果没有重写 compare 方法，默认调用的 compare 方法将会直接调用数据类型的 compareTo 方法，使数据从小到大排列。如果是自定义数据类型且未实现 compareTo 方法，则必须重写 compare 方法。
@@ -1213,4 +1258,190 @@ Collections.sort(students, (s1, s2) ->  s1.getID() - s2.getID());     // 使用 
 ```
 
 ### 数据排序
+
 Arrays/Collections 类定义了 sort 方法对数组或者集合元素进行排列，数值的比较通过调用 Comparator 接口的 compare 方法实现。
+
+## 异常处理
+### Throwable 类
+Java 程序中的异常是一个在程序执行期间发生的事件，它中断正在执行程序的正常指令流。为了能够及时有效地处理程序中的运行错误，必须使用异常类。
+
+java 程序中所有的异常都继承自 Throwable 类，Throwable 类有两个子类 Error 类和 Exception 类：
+
+- Error 类：【错误】表示 java 程序在运行时产生的无法处理的故障（如堆栈溢出），错误出现时会导致程序无法正常执行并强制退出。
+
+- Exception 类：【异常】表示 java 程序中产生的可以被处理的故障，异常出现时可以由程序进行处理。
+
+![java1](https://mrjokersince1997.github.io/My-Notes/javase/%E5%9F%BA%E7%A1%80/exception.png)
+
+#### RuntimeException 类
+【运行时异常】 Exception 类的子类。
+
+表示 java 程序运行状态中发生的异常，在编译时无法被检测。在 java 程序运行时会由系统自动抛出，允许应用程序不进行处理。
+
+|异常类型|介绍|
+|--|--|
+|ArithmeticException|算数异常，以零作除数|
+||ArrayIndexOutOfBoundException	|数组越界异常|
+|NullPointerException|空指针异常，对象不存在|
+
+#### Checked Exception 类
+【可检查异常】Exception 类除 RuntimeException 以外其他子类的统称。
+
+表示 java 程序编译时检测到的异常。出现时必须在程序中进行捕获或抛出，否则编译不会通过。
+
+|异常类型|介绍|
+|--|--|
+|IOException|IO异常|
+|FileNotFoundException|找不到文件异常，继承自 IO 异常|
+|ClassNotFoundException	|找不到类异常|
+
+### Exception 类
+#### 源码解析
+状态信息
+
+Throwable / Exception 类是有状态的（因此 Throwable 是接口而不能是类），记录了四个信息：
+
+```java
+private transient Object backtrace;                          // 栈的回溯点
+private String detailMessage;                                // 异常的信息：在创建异常时备注
+private Throwable cause = this;                              // 异常的原因：导致该异常的异常，默认为自身
+private StackTraceElement[] stackTrace = UNASSIGNED_STACK;   // 异常的发生顺序：以栈的形式存储
+```
+
+构造方法
+Throwable / Exception 类含有四个构造方法，在创建时可以记录异常信息：
+
+```java
+throw new Exception();                           // 默认
+throw new Exception("message");                  // 记录异常信息
+throw new Exception(e);                          // 记录异常原因
+throw new Exception("message", e);               // 记录详细信息和异常原因
+```
+
+常用方法
+
+Throwable / Exception 类定义了多种常用方法用于获取异常数据，常用的有：
+
+- getMessage 方法：获取异常的信息。
+- getStackTrace 方法：获取的异常发生顺序。
+- printStackTrace 方法：获取异常的发生顺序并打印（开发和调试阶段用来显示异常信息，帮助开发者找出错误）。
+
+```java
+catch(Exception e){
+    System.out.println(e.getMessage());
+    e.printStacTrace();                           
+}
+```
+
+#### 自定义异常
+
+```java
+// 自定义异常，重写方法可任选
+class MyException extends Exception {
+    @Override
+    public MyException() {
+        super();
+    }
+    @Override
+    public MyException(String message) {
+        super(message);
+    } 
+    @Override
+    public MyException(String message, Throwable cause){
+        super(message,cause);
+    }
+    @Override
+    public MyException(Throwable cause) {
+        super(cause);
+    }
+}
+```
+
+#### 异常转译
+在项目开发过程中，当 Sevice/DAO 层出现如 SQLException 异常时，程序一般不会把底层的异常传到 controller 层。程序可以捕获原始异常，然后再抛出一个新的业务异常。
+
+```java
+catch(SQLException e){
+    throw new MyException("SQL Error", e);
+}
+```
+
+### 异常处理
+
+#### 抛出异常 throw
+当方法执行出现问题时，方法就会创建异常对象并抛出。开发者可以在程序中自行抛出异常；JVM 在执行程序时发现问题也会自动抛出异常。
+
+- throw 语句：开发者自行创建异常对象并抛出，等待程序进行异常处理。
+
+- throws 语句：声明方法可能抛出某种异常且未经处理，调用该方法的上级需要进行异常处理。
+
+```java
+
+class TestException{       
+    // 把方法中的抛出异常交给上层处理     
+    public void writeList(int size) throws IndexOutOfBoundsException, IOException{
+        PrintWriter out = null;
+        // 用户自定义异常并抛出
+        if(size < 1) throw new IndexOutOfBoundsException("至少要输出1个字符");
+        try{
+            // 虚拟机自动发现异常也会抛出，必须出现在 try 代码块中
+            out = new PrintWriter(new FileWriter(txt));
+            for (int i = 0; i < size; i++)
+                System.out.println("Value at: " + i + " = " + list.get(i));
+        }finally{
+            if (out != null) out.close();
+        }
+     }
+}
+```
+
+#### 捕获异常 catch
+当方法执行抛出异常时，必须由专门的代码块对异常进行处理。
+
+- try 语句：可能出现异常的代码块。
+
+- catch 语句：捕获相应异常后停止执行 try 代码，转而执行对应 catch 代码。如果没有异常 catch 代码不会执行。
+
+- finally 语句：无论是否发生异常，finally 代码总会被执行。一般用于释放资源。
+
+注意事项
+
+1. 如果 try 语句中出现的异常未被 catch，默认将异常 throw 给上层调用者处理。但必须在方法中声明 throws。
+
+2. try/catch 代码中的 return 语句会在执行完 finally 后再返回，但 finally 中对返回变量的改变不会影响最终的返回结果。
+
+3. finally 代码中应避免含有 return 语句或抛出异常，否则只会执行 finally 中的 return 语句，且不会向上级抛出异常。
+
+Java 7 后在 try 语句中打开 IO 流，会在跳出后自动关闭流。不必再用 finally 语句关闭。
+
+```java
+class TestException{               
+    public void writeList(int size) {
+        PrintWriter out = null;
+        try {
+            if(size < 1) throw new IndexOutOfBoundsException("至少要输出1个字符");
+            out = new PrintWriter(new FileWriter("OutFile.txt"));
+            for (int i = 0; i < size; i++)
+                System.out.println("Value at: " + i + " = " + list.get(i));
+        } catch (IndexOutOfBoundsException e) {
+            System.err.println("Caught IndexOutOfBoundsException: " + e.getMessage());
+        } catch (IOException e) {
+            System.err.println("Caught IOException: " + e.getMessage());
+        } finally {
+            if (out != null) out.close();
+        }
+    }
+}
+```
+
+## IO
+### 序列化
+#### 对象持久化
+
+在 Java 程序中所创建的对象都保存在内存中，一旦 JVM 停止运行，这些对象都将会消失。因此以下两种情况必须通过序列化实现：
+
+1. 需要把对象持久化保存在文件中，在 JVM 重启后能够继续使用。
+2. 通过网络传送对象信息，在多个 JVM 间共享对象。
+
+#### Serializable 接口
+在类中声明实现 Serializable 接口，表示允许 Java 程序对这个类的对象序列化：JVM 会将对象的成员变量保存为一组字节，这些字节可以再被 JVM 组装成对象。对象序列化只保存的对象的成员变量，且不会关注类中的静态变量。
