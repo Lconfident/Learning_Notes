@@ -620,7 +620,7 @@ double *pd2 = pd;   //对，初始值是double 型对象的指针
 3. 空指针，意味着指针没有指向任何对象
 
 4. 无效指针，也就是上述情况之外的其他值
-   
+  
    2、3、4使用都有限制访问指针的行为不被允许
 
 **利用指针访问对象**
@@ -651,15 +651,15 @@ cout << *p;    //由符号*得到指针p所指的对象，输出42
 生成空指针的办法：
 
 1. `int *p1 = nullptr;`（推荐使用）
-   
+  
    > 用字面值`nullptr`来初始化指针，可以转换成任意其他类型的指针类型
 
 2. `int *p2 = 0;`
-   
+  
    > 初始化为字面值0来生成空指针
 
 3. `#include <cstdlib> ... int *p3 = NULL;`
-   
+  
    > 名为NULL的预处理量来给指针赋值，这个变量在头文件`cstdlib`中定义，它的值为0
 
 ----
@@ -943,13 +943,13 @@ constexpr int *q = nullptr;//q是一个指向整数的常量指针
 > **定义**类型别名
 > 
 > 1. 传统方法是使用关键字`typedef`
->    
+>   
 >    ```c++
 >    typedef double wages;//wages是double的同义词
 >    typedef wages base,*p;//base是double的同义词，p是double*的同义词
 >    ```
 > 2. 新规，使用别名定义
->    
+>   
 >    ```c++
 >    using SI = Sales_item;//SI是Sales_item的同义词
 >    ```
