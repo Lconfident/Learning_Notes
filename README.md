@@ -1,5 +1,19 @@
 # Learning_Notes
-学习笔记
+## 后端学习
+
+1. Java SE 学习
+2. MySQL
+3. JDBC
+4. JavaWeb
+5. Sping5
+
+## 技能训练
+
+- Git
+- Linux
+- Vim
+- Markdown
+- IDE插件
 
 ----
 
