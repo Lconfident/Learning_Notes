@@ -65,16 +65,7 @@ int[] nn = {12,21,23};
 System.out.println(nn);//类似于[I@1b6d3586这样
 ```
 
-这并没有什么意义，因为我们希望打印的数组的元素内容。因此，使用`for each`循环来打印它： 
-
-```java
-int[] ns = { 1, 1, 2, 3, 5, 8 };
-for (int n : ns) {
-    System.out.print(n + ", ");
-}
-```
-
-使用`for each`循环打印也很麻烦。幸好Java标准库提供了`Arrays.toString()`，可以快速打印数组内容： 
+Java标准库提供了`Arrays.toString()`，可以快速打印数组内容： 
 
 ```java
 import java.util.Arrays;
@@ -88,6 +79,18 @@ public class ForEach {
 输出：
 [1, 3, 5, 7, 8]
 ```
+
+### 数组拷贝
+
+Java允许一个数组变量拷贝到另一个数组变量。即**两个变量将引用同一个数组**。
+
+`Arrays.copyOf()`：将一个数组的所有值拷贝到一个新的数组中去。
+
+```java
+int[] copiedLuckyNumbers = Arrays.copyOf(luckyNumers, luckyNumbers.length);
+```
+
+第二个参数是新数组的长度，这个参数通常用来增加数组的大小。
 
 ### 数组排序
 
@@ -130,6 +133,8 @@ public class BubbleSort {
 排序之后：[1, 2, 18, 23, 43, 56, 89, 98]
 ```
 
+
+
 Java的标准库已经内置了排序功能，我们只需要调用JDK提供的`Arrays.sort()`就可以排序： 
 
 ```java
@@ -142,6 +147,7 @@ public class Test {
         System.out.println(Arrays.toString(arr));
     }
 }
+
 输出：
 [9, 12, 27, 33, 92, 98, 123]
 ```
