@@ -2660,3 +2660,174 @@ Java 9引入的模块目的是为了管理依赖；
 使用模块可以按需打包JRE；
 
 使用模块对类的访问权限有了进一步限制。
+
+## 补充
+
+### 主力类
+
+workhorse class，通常主力类没有main方法，却有自己的实例字段和实例方法。
+
+```java
+package EmployeeTest;
+import java.time.*;
+
+/**
+ * This program tests the Employee class
+ */
+public class EmployeeTest {
+    public static void main(String[] args) {
+        Employee[] staff = new Employee[3];
+        staff[0] = new Employee("Carl Cracker",75000,1987,12,15);
+        staff[1] = new Employee("Harry Hacker",50000,1989,10,1);
+        staff[2] = new Employee("Tony Tester",20000,2004,1,21);
+
+        // raise everyone's salary by 5%
+        for (Employee e:staff) {
+            e.raiseSalary(5);
+        }
+
+        // print out information about all Employee objects
+        for(Employee e:staff) {
+            System.out.println("name:" +e.getName() +",Salary:"+e.getSalary()+",hireDay:"+e.getHireDay());
+        }
+    }
+}
+
+class Employee{
+    private String name;
+    private double salary;
+    private LocalDate hireDay;
+
+    public Employee(String name, double salary,int year, int month, int day){
+        this.name = name;
+        this.salary = salary;
+        this.hireDay = LocalDate.of(year, month, day);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public LocalDate getHireDay() {
+        return hireDay;
+    }
+
+    public void raiseSalary(double byPercent) {
+        double raise = this.salary * byPercent / 100;
+        salary += raise;
+    }
+}
+```
+
+许多程序员习惯于将每一个类存放在单独的源文件中。例如，将`Employee`类存放在文件`Employee.java`中，将`EmployeeTest`类存放在文件`EmployeeTest.java`中。
+
+如果这样组织文件，可以有两种编译源程序的方法。
+
+第一种是使用通配符调用Java编译器：
+
+```java
+javac Employee*.java
+```
+
+这样，所有与通配符匹配的源文件都被编译成类文件。
+
+第二种是直接键入以下命令：
+
+```java
+javac EmployeeTest.java
+```
+
+ 虽然没有显式地编译`Employee.java`，不过当`Java`编译器发现`EmployeeTest.java`使用`Employee`类时，他会查找名为`Employee.class`的文件。如果没有这个文件，就会自动搜索`Employee.java`，然后进行编译。
+
+### 剖析Employee类
+
+首先从类的方法开始，这个类包括一个构造器和4个方法：
+
+```java
+public Employee(String name, double salary,int year, int month, int day)
+public String getName()
+public double getSalary()
+public LocalDate getHireDay()
+public void raiseSalary(double byPercent)
+```
+
+这个类的所有方法都被标记为`public`，意味着任何类的任何方法都可以调用这些方法。
+
+接下来，`Employee`类的实例中有3个实例字段用来存放将要操作的数据：
+
+```java
+private String name;
+private double salary;
+private LocalDate hireDay;
+```
+
+关键字`private`确保只有`Employee`类自身的方法访问这些字段，而其他类的方法不能读写这些字段。
+
+最后，请注意，有两个实例字段本身就是对象：`name`字段是`String`类对象，`hireDay`字段是`LocalDate`类对象。这种情况非常常见：类包含的实例字段通常属于某个类类型。
+
+### 从构造器开始
+
+- 构造器与类同名
+- 每个类可以有一个以上的构造器
+- 构造器可以有0个、1个或多个参数
+- 构造器没有返回值
+- 构造器总是伴随着new操作符一起调用
+
+### 用var声明局部变量
+
+在Java10中，如果可以从变量的初始值推导出它们的类型，那么可以用`var`关键字声明局部变量，而无须指定类型。
+
+```java
+Employee harry = new Employee("Harry Hacker", 50000,1989,10,1)
+```
+
+只需要写以下代码：
+
+```java
+var harry = new Employee("Harry Hacker", 50000,1989,10,1)
+```
+
+这样就可以避免重复写类型名`Employee`。
+
+如果无须了解任何Java API就能从等号右边明显看出类型，这种情况下，我们都是用`var`表示法。不过不会对数值类型使用`var`，如`int,double或float`
+
+> 注意：var 关键字只适用于方法中的局部变量。参数和字段必须声明字段。
+
+### 使用null引用
+
+实例字段`name`可能为`null`，如果调用构造器时为`name`提供的实参是`null`，`name`就会是`null`。
+
+有两种解决办法：
+
+“宽容型”方法是将`null`参数转换为一个适当的非`null`值：
+
+```java
+if (name == null) this.name = "unkown"; else this.name = name;
+```
+
+Java9中，`Objects`类对此提供了一个便利：
+
+```java
+public Employee(String s, double s, int year, int month, int day)
+{
+    ...
+    name = Objects.requireNonNullElse(n,"unkown");
+    ...
+}
+```
+
+“严格型”方法则是干脆拒绝`null`参数：
+
+```java
+public Employee(String n,double s,int year,int month,int day)
+{
+    Objects.requireNonNUll(n,"The name cannot be null");
+    name = n;
+    ...
+}
+```
+
