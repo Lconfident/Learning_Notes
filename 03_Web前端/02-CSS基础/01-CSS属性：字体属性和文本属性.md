@@ -354,7 +354,8 @@ p:hover{
 - *-resize :　 用于标示对象可被改变尺寸方向的箭头光标。
 
 - ```
-                   w-resize | s-resize | n-resize | e-resize | ne-resize | sw-resize | se-resize | nw-resize
+         w-resize | s-resize | n-resize | e-resize | ne-resize | sw-resize | se-resize | nw-resize
+     ```
   ```
 
 - url ( url ) :　 IE6.0 用户自定义光标。使用绝对或相对 url 地址指定光标文件(后缀为 .cur 或者 .ani )。
@@ -363,13 +364,13 @@ p:hover{
 
 这里只举一个滤镜的例子吧。比如说让图片变成灰度图的效果，可以这样设置滤镜：
 
-```
+  ```
 	<img src="3.jpg" style="filter:gray()">
 ```
 
 举例代码：
 
-```html
+​```html
  <body>
 	<table>
 		<tr>
