@@ -1,3 +1,5 @@
+### `HTTPServletResponse`
+
 `Servlet API`中，定义了一个`HTTPServletResponse`接口，继承自`ServletResponse`接口，专门用于封装HTTP响应消息。
 
 HTTP响应消息分为【响应消息状态行】、【响应消息头】、【响应消息体】三部分
@@ -51,4 +53,30 @@ Sevlet向客户端发送响应消息时，需要在响应消息中发送状态�
 ### 发送响应消息体
 
 HTTP响应消息中，大量数据都是通过响应消息体传递的
+
+#### `getOutputStream（）方法`
+
+该方法所获取的字节输出流对象为`ServletOuputSream`类型
+
+`ServletOutputSream`是`OutputStream`的子类，可以直接输出字节数组中的二进制数据
+
+#### `getWriter()方法`
+
+该方法所获取的字符输出流对象为`PrintWriter`类型
+
+可以输出字符文本内容
+
+### `HTTPServletResponse`应用
+
+#### 实现重定向
+
+针对客户端的请求，一个Servlet类可能无法完成全部工作，这时，可以使用请求重定向来完成
+
+所谓**重定向**，是指Web服务器接收到到客户端的请求后，由于某些条件限制，不能访问当前请求URL所指向的Web资源，而是指定了一个新的资源路径，让客户端重新发送请求。
+
+实现重定向，`HTTPServletResponse`接口定义了一个`sendRedirect（）`方法，该方法用于生成302响应码和Location响应头，从而通知客户端重新访问Location响应头中指定的URL
+
+> public void sendRedirect(java.lang.String location) throws java.io.IOException
+>
+> 参数location可以使用相对URL，Web服务器会自动将相对URL翻译成绝对URL，再生成Location字段
 
