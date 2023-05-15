@@ -70,11 +70,9 @@ HTTP响应消息中，大量数据都是通过响应消息体传递的
 
 #### 实现重定向
 
-针对客户端的请求，一个Servlet类可能无法完成全部工作，这时，可以使用请求重定向来完成
-
-所谓**重定向**，是指Web服务器接收到到客户端的请求后，由于某些条件限制，不能访问当前请求URL所指向的Web资源，而是指定了一个新的资源路径，让客户端重新发送请求。
-
-实现重定向，`HTTPServletResponse`接口定义了一个`sendRedirect（）`方法，该方法用于生成302响应码和Location响应头，从而通知客户端重新访问Location响应头中指定的URL
+- 针对客户端的请求，一个Servlet类可能无法完成全部工作，这时，可以使用请求重定向来完成
+- 所谓**重定向**，是指Web服务器接收到到客户端的请求后，由于某些条件限制，不能访问当前请求URL所指向的Web资源，而是指定了一个新的资源路径，让客户端重新发送请求。
+- 实现重定向，`HTTPServletResponse`接口定义了一个`sendRedirect（）`方法，该方法用于生成302响应码和Location响应头，从而通知客户端重新访问Location响应头中指定的URL
 
 > public void sendRedirect(java.lang.String location) throws java.io.IOException
 >

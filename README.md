@@ -1,5 +1,17 @@
-# Learning_Notes
-## 后端学习
+| 算法  |  操作系统  |  网络   |   Java   |    数据库     |     Web     |         编码时间         |   工具   |       后记       |
+| :---: | :--------: | :-----: | :------: | :-----------: | :---------: | :----------------------: | :------: | :--------------: |
+| :key: | :computer: | :cloud: | :coffee: | :floppy_disk: | :mag_right: | :hourglass_flowing_sand: | :wrench: | :page_with_curl: |
+
+![home](E:\Learning_Notes\images\girl.png)
+
+---
+
+##  🔑 算法
+
+- Java数据结构
+- 剑指Offer 题解
+
+## JAVA后端学习
 
 1. Java SE 学习
 2. MySQL
@@ -7,13 +19,14 @@
 4. JavaWeb
 5. Sping5
 
-## 技能训练
+## 技能树
 
-- Git
-- Linux
-- Vim
-- Markdown
+- 分布式版本控制 [Git](https://github.com/doggy8088/Learn-Git-in-30-days/blob/master/zh-cn/README.md)必备
+- 想上手可以去学习，[后端必学Linux](https://www.linuxprobe.com/)，如果想快速上手LInux，也可以看[这个](https://linuxtools-rst.readthedocs.io/zh_CN/latest/base/index.html)
+- 都2022年了，为什么我还在用[Vim](https://sspai.com/post/71284)，最好用的文本编辑器
+- [Markdown](https://www.runoob.com/markdown/md-tutorial.html)人手一份，上手超简单
 - IDE插件
+- GitHub的Markdown语法支持添加[emoji表情](https://github.com/duxl/README/blob/master/emoji.md)
 
 ## CS规划
 
@@ -58,7 +71,7 @@
 
   - [操作系统](https://www.icourse163.org/course/HIT-1002531008#/info)  实验课资料  https://github.com/hoverwinter/HIT-OSLab   
 
-    另外，学习操作系统一定会学Linux，Linux入门推荐鸟哥的私房菜-基础学习篇
+    另外，有多余时间可以看看Linux的[鸟哥的私房菜](http://cn.linux.vbird.org/linux_basic/linux_basic.php)
 
 - 大三
 
