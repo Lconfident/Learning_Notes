@@ -75,7 +75,7 @@
 
 - GitHub[emoji表情](https://github.com/duxl/README/blob/master/emoji.md)
 
-- IDEA插件推荐
+- [IDEA插件推荐](工具/IDEA插件推荐.md)
 
 ## :camera:项目
 
