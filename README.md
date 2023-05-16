@@ -73,9 +73,9 @@
 
 - [Vim](https://sspai.com/post/71284)
 
-- GitHub[emoji表情](https://github.com/duxl/README/blob/master/emoji.md)
+- [GitHub emoji表情](https://github.com/duxl/README/blob/master/emoji.md)
 
-- [IDEA插件推荐](工具/IDEA插件推荐.md)
+- [IDEA插件推荐](./8-工具/IDEA插件推荐.md)
 
 ## :camera:项目
 
