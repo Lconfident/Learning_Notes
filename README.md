@@ -2,6 +2,12 @@
 |:-----:|:----------:|:-------:|:--------:|:-------------:|:-----------:|:------------------------:|:--------:|:--------:|:----------------:|
 | :key: | :computer: | :cloud: | :coffee: | :floppy_disk: | :mag_right: | :hourglass_flowing_sand: | :wrench: | :camera: | :page_facing_up: |
 
+> <p align="center">星星发亮是为了让每一个人有一天都能找到属于自己的星星。</p>
+> 
+> <p align="right">——埃克苏佩里《小王子》</p>
+
+
+
 <img title="" src="images/girl.png" alt="home" data-align="inline">
 
 ---
