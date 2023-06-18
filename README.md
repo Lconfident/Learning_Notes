@@ -1,5 +1,9 @@
-| 算法    | 操作系统       | 网络      | Java     | 数据库           | Web         | 编码时间                     | 工具       | 项目       | 后记               |
-|:-----:|:----------:|:-------:|:--------:|:-------------:|:-----------:|:------------------------:|:--------:|:--------:|:----------------:|
+---
+typora-root-url: images
+---
+
+| 算法  |  操作系统  |  网络   | Java后端 |    数据库     |     Web     |         编码时间         |   工具   |   项目   |       后记       |
+| :---: | :--------: | :-----: | :------: | :-----------: | :---------: | :----------------------: | :------: | :------: | :--------------: |
 | :key: | :computer: | :cloud: | :coffee: | :floppy_disk: | :mag_right: | :hourglass_flowing_sand: | :wrench: | :camera: | :page_facing_up: |
 
 > <p align="center">星星发亮是为了让每一个人有一天都能找到属于自己的星星。</p>
@@ -8,7 +12,7 @@
 
 
 
-<img title="" src="images/girl.png" alt="home" data-align="inline">
+<img title="" src="../images/girl.png" alt="home" data-align="inline">
 
 ---
 
@@ -43,17 +47,24 @@
 
 - Redis
 
-## :coffee:Java
+## :coffee:Java后端
 
-- Java 基础
-
-- Java 容器
-
-- Java 并发
-
-- Java 虚拟机
-
-- Java I/O
+- JavaSE
+  - Java 基础
+  - Java 容器
+  - Java 并发
+  - Java 虚拟机
+  - Java I/O
+- JavaWeb
+  - HTTP协议
+  - Tomcat
+  - Servlet
+  - JSP
+  - MVC
+  - Filter
+  - Linstener
+  - 购物车
+  - 前后端分离
 
 ## :mag:Web
 
@@ -85,7 +96,11 @@
 
 ## :camera:项目
 
-- ## :page_facing_up:后记
+## :page_facing_up:后记
+
+### 学习路线
+
+![Java学习路线](../images/JavaLearning.png)
 
 ### 计算机编程基础
 
@@ -117,15 +132,11 @@
   
   - 概率论与数理统计
   
-  - [操作系统](https://www.icourse163.org/course/HIT-1002531008#/info)  实验课资料  https://github.com/hoverwinter/HIT-OSLab   
+  - [操作系统](https://www.icourse163.org/course/HIT-1002531008#/info)  实验课资料
     
     另外，有多余时间可以看看Linux的[鸟哥的私房菜](http://cn.linux.vbird.org/linux_basic/linux_basic.php)
 
 - 大三
   
   - 软件工程
-  - [计算机网络](https://www.icourse163.org/course/HIT-154005)   https://www.bilibili.com/video/BV1Tt411s7ei/
-
-----
-
-![image](https://github.com/Lconfident/Pictures/blob/main/f525a3b4f0d47c28b673a6061716a39.jpg)
+  - [计算机网络](https://www.icourse163.org/course/HIT-154005)
