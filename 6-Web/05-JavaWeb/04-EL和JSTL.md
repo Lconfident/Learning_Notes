@@ -91,11 +91,11 @@ ${product}
 
 ### 概述
 
-`Java server pages standard tag library,JSTL`
+JSTL，全称为`JSP Standard Tag Library`，是一种用于Java服务器页（JSP）的标准标记库。它包含一组JSP标记，可以简化JSP页面的开发和维护。
 
-JSP1.1规范开始，JSP就支持使用自定义标签库
+JSTL从JSP页面中移除Java代码，将其替换为标记。这有助于开发人员将业务逻辑和界面页面代码分离。JSTL标记分为四个功能集：Core，XML，Internationalization，和SQL。Core标记用于控制流程和数据输出，XML标记用于处理XML文档， Internationalization标记用于国际化，SQL标记用于访问数据库。
 
-使用标签库可以大大降低JSP页面的复杂度，同时增加代码重用性
+JSTL是Java EE平台的一部分，因此它可以在Java应用程序服务器上运行，如Apache Tomcat、Glasfish和JBoss。它可以与其他Java技术、框架和库结合使用，例如JavaServer Faces（JSF）。
 
 > 包含五大类
 >
