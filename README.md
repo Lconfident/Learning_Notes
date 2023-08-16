@@ -2,9 +2,9 @@
 typora-root-url: images
 ---
 
-| 算法  |  操作系统  |  网络   | Java后端 |    数据库     |     Web     |         编码时间         |   工具   |   项目   |       后记       |
-| :---: | :--------: | :-----: | :------: | :-----------: | :---------: | :----------------------: | :------: | :------: | :--------------: |
-| :key: | :computer: | :cloud: | :coffee: | :floppy_disk: | :mag_right: | :hourglass_flowing_sand: | :wrench: | :camera: | :page_facing_up: |
+| 算法  |  操作系统  |  网络   | Java后端 |    数据库     |     Web     |         编码时间         |   工具   |   项目   |      思考       |
+| :---: | :--------: | :-----: | :------: | :-----------: | :---------: | :----------------------: | :------: | :------: | :-------------: |
+| :key: | :computer: | :cloud: | :coffee: | :floppy_disk: | :mag_right: | :hourglass_flowing_sand: | :wrench: | :camera: | :grey_question: |
 
 > <p align="center">星星发亮是为了让每一个人有一天都能找到属于自己的星星。</p>
 > 
@@ -95,6 +95,9 @@ typora-root-url: images
 - [IDEA插件推荐](./8-工具/IDEA插件推荐.md)
 
 ## :camera:项目
+
+## :grey_question:思考
+
 
 ## :page_facing_up:后记
 
