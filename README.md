@@ -2,7 +2,7 @@
 typora-root-url: images
 ---
 
-| 算法  |  操作系统  |  网络   | Java后端 |    数据库     |     Web     |         编码时间         |   工具   |   项目   |      思考       |
+| 算法  |  操作系统  |  网络   |   Java   |    数据库     |     Web     |         编码时间         |   工具   |   项目   |      思考       |
 | :---: | :--------: | :-----: | :------: | :-----------: | :---------: | :----------------------: | :------: | :------: | :-------------: |
 | :key: | :computer: | :cloud: | :coffee: | :floppy_disk: | :mag_right: | :hourglass_flowing_sand: | :wrench: | :camera: | :grey_question: |
 
@@ -47,7 +47,7 @@ typora-root-url: images
 
 - Redis
 
-## :coffee:Java后端
+## :coffee:Java
 
 - JavaSE
   - Java 基础
